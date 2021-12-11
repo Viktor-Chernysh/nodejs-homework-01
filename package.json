@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-homework-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "start:dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Viktor-Chernysh/nodejs-homework-01.git"
+  },
+  "author": "Viktor_Chernysh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Viktor-Chernysh/nodejs-homework-01/issues"
+  },
+  "homepage": "https://github.com/Viktor-Chernysh/nodejs-homework-01#readme"
+}
