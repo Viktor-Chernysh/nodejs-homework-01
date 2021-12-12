@@ -25,7 +25,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
       const contacts = await contactsList();
-      console.table(contacts);
+      // console.table(contacts);
       break;
 
     case "get":
@@ -36,24 +36,28 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
         );
         return;
       }
-      console.log(chalk.yellow("Contact found!!!"));
+      // console.log(chalk.yellow("Contact found!!!"));
       console.table(contactGettingById);
       break;
 
     case "add":
       const contact = await addContact(name, email, phone);
+      if (contact === void 0) {
+        console.log(chalk.red("Please full in all inputs"));
+        return;
+      }
       console.log(contact);
       break;
 
     case "remove":
       const removingContact = await removeContact(id);
       if (removingContact === null) {
-        console.log(
-          chalk.red(`Sorry but there is no contact with "${id}" ID!`)
-        );
+        // console.log(
+        //   chalk.red(`Sorry but there is no contact with "${id}" ID!`)
+        // );
         return;
       }
-      console.log(chalk.green(`Contact with id=${id} was success deleted!`));
+      // console.log(chalk.green(`Contact with id=${id} was success deleted!`));
       break;
 
     default:
