@@ -20,7 +20,6 @@ program.parse(process.argv);
 
 const argv = program.opts();
 
-// TODO: рефакторить
 const invokeAction = async ({ action, id, name, email, phone }) => {
   switch (action) {
     case "list":
@@ -36,7 +35,6 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
         );
         return;
       }
-      // console.log(chalk.yellow("Contact found!!!"));
       console.table(contactGettingById);
       break;
 
@@ -50,14 +48,7 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
       break;
 
     case "remove":
-      const removingContact = await removeContact(id);
-      if (removingContact === null) {
-        // console.log(
-        //   chalk.red(`Sorry but there is no contact with "${id}" ID!`)
-        // );
-        return;
-      }
-      // console.log(chalk.green(`Contact with id=${id} was success deleted!`));
+      await removeContact(id);
       break;
 
     default:
